@@ -1,9 +1,9 @@
 # Site wide configuration
 
-title: Site Title
+title: Mathemathinking
 locale: en_US
-description: Describe your website here.
-logo: site-logo.png
+description: Math, Data, Machine Learning, Chemical engineering
+logo: cover.jpeg
 search: true
 url: http://localhost:4000
 
@@ -31,19 +31,19 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
-  avatar: bio-photo.jpg
-  email: you@email.com
+  name: Cory Simon
+  avatar: cory.jpg
+  email: CoryMSimon@gmail.com
   disqus-shortname:
-  twitter: #username
-  facebook: #username
-  github: #username
+  twitter: CoryMSimon
+  facebook: cory.simon.589
+  github: CorySimon
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: #username
-  instagram: #username
+  instagram: 
   flickr: #username
   tumblr: #username
-  google:
+  google: #username
     plus: #username
     analytics:
     verify:
