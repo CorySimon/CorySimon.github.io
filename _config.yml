@@ -2,7 +2,7 @@
 
 title: Mathemathinking
 locale: en_US
-description: Math, Data, Machine Learning, Chemical engineering
+description: Math, Data, Machine learning, Chemical engineering
 logo: cover.jpeg
 search: true
 url: http://localhost:4000
@@ -10,7 +10,8 @@ url: http://localhost:4000
 # Jekyll configuration
 
 permalink:   /:categories/:title/
-markdown:    kramdown
+markdown:    redcarpet
+#markdown:    kramdown
 highlighter: pygments
 sass:
   sass_dir: _sass
