@@ -11,7 +11,7 @@ url: http://localhost:4000
 
 permalink:   /:categories/:title/
 markdown:    redcarpet
-#markdown:    kramdown
+ # markdown:    kramdown
 highlighter: pygments
 sass:
   sass_dir: _sass

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why Cocaine Users Should Learn Bayes' Theorem
-excerpt: "Even when a diagnostic test for a disease or drug has a high accuracy, the false positives can outnumber the false negatives when the incidence of the disease or drug use is low."
+excerpt: "Even when a diagnostic test for a disease or drug has a high accuracy, the false positives can outnumber the true positives when the incidence of the disease or drug use is low."
 comments: false
 categories: articles
 share: true
