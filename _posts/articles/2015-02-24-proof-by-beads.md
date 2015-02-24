@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proof by beads
-excerpt: 1+2+...+n+(n-1)+(n-2)+...2+1=n<sup>2</sup> has a nice geometric proof
+excerpt: 1+2+...+(n-1)+n+(n-1)+...+2+1=n<sup>2</sup> has a nice geometric proof
 comments: false
 categories: articles
 share: true
