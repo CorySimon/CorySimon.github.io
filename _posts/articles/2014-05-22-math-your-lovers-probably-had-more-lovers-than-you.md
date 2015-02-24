@@ -31,6 +31,7 @@ Not only is the friendship paradox interesting, it is useful. During the H1N1 ou
 
 Let's proove the friendship paradox. A network of friends can be represented as an undirected graph \\(G(V,E)\\). This graph \\(G\\) consists of a set \\(V\\) of vertices, representing people, and a set \\(E\\) of edges, representing friendships. An edge connects two vertices.
 
+{:.center}
 <figure>
 	<img src="/images/graph.jpg" alt="image">
 </figure>

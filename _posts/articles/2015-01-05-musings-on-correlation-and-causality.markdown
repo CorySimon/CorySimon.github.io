@@ -22,9 +22,8 @@ Similarly, often we observe a correlation between two variables X and Y and fall
 
 **A chance correlation**. When mining large data sets, it is almost inevitable that one will discover spurious correlations by *chance*, even though the two variables are completely unrelated in reality. As an example, are Mexican lemons making our highways safer? [1] A myriad of ridiculous spurious correlations: [here](http://www.tylervigen.com/).
 
+{:.center}
 ![](http://pubs.acs.org/appl/literatum/publisher/achs/journals/content/jcisd8/2008/jcisd8.2008.48.issue-1/ci700332k/production/images/medium/ci700332kn00001.gif){: .center-image }
-
-
 
 **Lurking variables**. Often two variables are correlated because of a third, underlying factor that we hadn't thought about-- the *lurking variable*. For example, shoe size is probably correlated with reading ability. This is because of a lurking variable: age; children have small feet and are still developing their reading skills [2].
 

@@ -14,6 +14,7 @@ We may seek to develop a predictive algorithm to take some feature $$x$$ of the 
 
 Consider predicting if a patient has diabetes on the basis of a quick, spontaneous measurement of the concentration of glucose in his or her blood, $$x$$. Imagine that we know the true distribution of concentrations in the patients who have diabetes $$y=1$$ and do not have diabetes $$y=0$$ separately. It may look something like the following.
 
+{:.center}
 <figure>
 	<img src="/images/roc/glucosedistn.png" alt="image">
 </figure>
@@ -30,12 +31,14 @@ Regardless of the discrimination threshold $$x^*$$ that we choose, we cannot per
 
 One might think that the obvious choice of the discrimination threshold $$x^*$$ is as shown below, since this $$x^*$$ equates the probability of a false positive to the probability of a false negative. As all patients to the right of the discrimination threshold are classified as having diabetes, patients in the green tail to the right of the vertical line are false positives. As all patients to the left of the discrimination threshold are classified as diabetes-free, the red tail to the left of the classification threshold are false negatives.
 
+{:.center}
 <figure>
 	<img src="/images/roc/glucosedistn2.png" alt="image">
 </figure>
 
 However, this discrimination threshold $$x^*$$ is the optimal one only if we consider the _loss_ from a false positive equal to that of the loss when a false negative occurs. For this quick, cheap blood glucose concentration measurement, perhaps we should err on the safe side and move the discrimination threshold to the left. This way, we don't let anyone who _might_ have diabetes leave the hospital without further investigation to rule out diabetes. Decreasing the discrimination threshold reduces the number of false negatives substantially (the part of the red distribution to the left of the vertical line), as shown below.
 
+{:.center}
 <figure>
 	<img src="/images/roc/glucosedistn3.png" alt="image">
 </figure>
@@ -48,10 +51,14 @@ The ROC curve nicely illustrates the performance of our algorithm by plotting th
 
 The ROC curve for this example is plotted by choosing a series of discrimination thresholds $$x^*$$, shown as the series of vertical lines below.
 
-[![glucosedistn](http://mathemathinking.com/wp-content/uploads/2014/12/glucosedistn4.png)](http://mathemathinking.com/wp-content/uploads/2014/12/glucosedistn4.png)
+{:.center}
+<figure>
+	<img src="/images/roc/glucosedistn4.png" alt="image">
+</figure>
 
 For each of the discrimination thresholds, we then compute the true positive and false positive rates using the Classification Algorithm above, integrating the appropriate tail of the appropriate distribution. The result is a set of points (one for each candidate $$x^*$$) in the *true positive rate* - *false positive rate* plane, which is the ROC curve. The points on the ROC curve below are color-coded consistently with the above series of discrimination thresholds.
 
+{:.center}
 <figure>
 	<img src="/images/roc/roc4.png" alt="image">
 </figure>
@@ -63,10 +70,12 @@ A [poor] classification algorithm that *randomly guesses* if a given person has
 
 The ideal scenario for classification is when everyone with diabetes has the same, high glucose concentration and everyone without diabetes has the same, low glucose concentration. In this case, the ROC curve has a single point at $$(0,1)$$ [and two points at $$(0,0)$$ and $$(1,0)$$, but no one in their right mind would choose one of these corresponding discrimination thresholds]. Below is a less exaggerated version. Most of the discrimination thresholds between the two, tighter distributions perfectly separate the classes and yield a point $$(0,1)$$ on the ROC curve.
 
+{:.center}
 <figure>
 	<img src="/images/roc/glucosedistn5.png" alt="image">
 </figure>
 
+{:.center}
 <figure>
 	<img src="/images/roc/roc3.png" alt="image">
 </figure>

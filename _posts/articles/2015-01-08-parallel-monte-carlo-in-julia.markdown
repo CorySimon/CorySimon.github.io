@@ -12,6 +12,7 @@ tags: [Computing in Julia]
 
 As an embarassingly parallel algorithm for an example, we will compute \\(\pi=3.14159265...\\), the ratio of a circle's circumference to its diameter, using a Monte Carlo simulation. It [follows](http://math.stackexchange.com/questions/187987/calculus-proof-for-the-area-of-a-circle) from the definition of \\(\pi\\) that the area of a circle is \\(A=\pi r^2\\), where \\(r\\) is the radius of a circle. We can develop a [Monte Carlo algorithm](http://en.wikipedia.org/wiki/Monte_Carlo_algorithm) to compute \\(\pi\\) by randomly throwing darts-- i.e. generating uniformly distributed random numbers in a box \\([-1,1]^2\\) in the \\(x\\)-\\(y\\) plane and counting the fraction of the points that land inside the circle.
 
+{:.center}
 <figure>
 	<img src="/images/julia/myplot.png" alt="image">
 </figure>
@@ -43,6 +44,7 @@ end
 
 As we throw more and more darts, the estimate should converge to the value of \\(\pi\\) within machine precision, assuming the random number generator is perfect. The plot below shows how the estimate of \\(\pi\\) gets better as we increase the number of darts, \\(N\\). The blue, horizontal line is the true value of \\(\pi\\). Note the log scale on the \\(x\\)-axis.
 
+{:.center}
 <figure>
 	<img src="/images/julia/myplot2.png" alt="image">
 </figure>
@@ -51,6 +53,7 @@ The process of throwing darts and counting the fraction that land in the circle
 
 In the shell, start Julia using all 8 cores<sup>1</sup>:
 
+{:.center}
 <figure>
 	<img src="/images/julia/julia.png" alt="image">
 </figure>
@@ -65,13 +68,13 @@ Now, within Julia, we need to tell all 8 cores about the function `compute_pi(N
     """
     n_landed_in_circle = 0  # counts number of points that have radial coordinate < 1, i.e. in circle
     for i = 1:N
-    x = rand() * 2 - 1  # uniformly distributed number on x-axis
-    y = rand() * 2 - 1  # uniformly distributed number on y-axis
+        x = rand() * 2 - 1  # uniformly distributed number on x-axis
+        y = rand() * 2 - 1  # uniformly distributed number on y-axis
 
-    r2 = x*x + y*y  # radius squared, in radial coordinates
-    if r2 < 1.0
-        n_landed_in_circle += 1
-    end
+        r2 = x*x + y*y  # radius squared, in radial coordinates
+        if r2 < 1.0
+            n_landed_in_circle += 1
+        end
     end
 
     return n_landed_in_circle / N * 4.0    
@@ -112,6 +115,7 @@ Calling this function `parallel_pi_compute(8000000000)` will then compute \\(\pi
 
 Using the `@time` macro, we can see the speed up using the parallelized implementation. The parallel implementation is about five times faster than the serial implementation!
 
+{:.center}
 <figure>
 	<img src="/images/julia/perform1.png" alt="image">
 </figure>

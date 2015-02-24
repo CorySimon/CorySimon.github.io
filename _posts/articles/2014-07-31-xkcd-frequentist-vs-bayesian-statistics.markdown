@@ -10,6 +10,7 @@ tags: [statistics]
 
 Two approaches to problems in the world of statistics and machine learning are that of frequentist and Bayesian statistics. This comic from XKCD illustrates a difference between the two viewpoints.
 
+{:.center}
 ![](http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png)
 
 We have a neutrino detector that measures whether the sun has gone nova. The detector is not perfect; 1/36 times, the detector incorrectly indicates whether or not the sun has gone nova. [The probability of rolling two fair die as both 6 is 1/6 * 1/6 = 1/36.]

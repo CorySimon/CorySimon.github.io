@@ -5,8 +5,8 @@ locale: en_US
 description: Math, Data, Machine learning, Chemical engineering
 logo: cover.jpeg
 search: true
-#url: http://localhost:4000
-url: http://CorySimon.github.io
+url: http://localhost:4000
+#url: http://CorySimon.github.io
 
 # Jekyll configuration
 
@@ -30,13 +30,13 @@ kramdown:
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
-
+comments: true
 # Site owner
 owner:
   name: Cory Simon
   avatar: cory.jpg
   email: CoryMSimon@gmail.com
-  disqus-shortname:
+  disqus-shortname: corysimongithubio
   twitter: CoryMSimon
   facebook: cory.simon.589
   github: CorySimon
