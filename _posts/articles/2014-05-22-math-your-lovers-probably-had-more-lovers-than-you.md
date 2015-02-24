@@ -40,15 +40,15 @@ The only notation we need is:
 
 \\(d(v)\\): the _degree_ of vertex \\(v\\). The degree is the number of friends that the person represented by the vertex \\(v\\) has.
 
-\\(|V|\\): the total number of vertices, i.e., the number of people in the network.
+<span>\\(|V|\\)</span>: the total number of vertices, i.e., the number of people in the network.
 
-\\(|E|\\): the total number of edges in our network, i.e., the number of friendships in the network.
+<span>\\(|E|\\)</span>: the total number of edges in our network, i.e., the number of friendships in the network.
 
 What is the expected number of friends a person has in our network? This corresponds to the expected value of \\(d(v)\\) of a randomly chosen person in the network.
 
-\\(E(d)=\sum_{v \in V} \frac{1}{|V|} d(v)\\).
+$$E(d)=\sum_{v \in V} \frac{1}{|V|} d(v).$$
 
-So we sum over all people and count their friends, giving each count a weight \\(1/ |V| \\) since this is the probability that the given person was the randomly chosen person (the same for everyone in the network).
+So we sum over all people and count their friends, giving each count a weight <span>\\(1/ |V| \\)</span> since this is the probability that the given person was the randomly chosen person (the same for everyone in the network).
 
 This can be simplified by the handshaking lemma, which notes that if we loop over all people in the network and add up their count of friends to a total, we will double-count the number of edges in the graph. Thus
 
@@ -80,7 +80,7 @@ Note that this a general property of a graph, and it is not conditioned on the g
 
 **References**
 
-[1] http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?_php=true&_type=blogs&_r=0
+[1] S. Strogatz. Friends You Can Count On. New York Times, The Opinion Pages. (2012) [http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?_php=true&_type=blogs&_r=0](http://opinionator.blogs.nytimes.com/2012/09/17/friends-you-can-count-on/?_php=true&_type=blogs&_r=0])
 
 [2] Feld, S. L. (1991). Why Your Friends Have More Friends than You Do. _AJS_,_96_(6), 1464-77.
 
@@ -90,8 +90,6 @@ Note that this a general property of a graph, and it is not conditioned on the g
 
 [5] Christakis, N. A., & Fowler, J. H. (2010). Social network sensors for early detection of contagious outbreaks. _PloS one_, _5_(9), e12948.
 
-[6] http://en.wikipedia.org/wiki/Friendship_paradox
+[6] [http://en.wikipedia.org/wiki/Friendship_paradox](http://en.wikipedia.org/wiki/Friendship_paradox)
 
-[7] http://www.psychologytoday.com/blog/the-scientific-fundamentalist/200911/why-your-friends-have-more-friends-you-do
-
-
+[7] S. Kanazawa. Why Your Friends Have More Friends Than You Do. Psychology Today. (2009) [http://www.psychologytoday.com/blog/the-scientific-fundamentalist/200911/why-your-friends-have-more-friends-you-do](http://www.psychologytoday.com/blog/the-scientific-fundamentalist/200911/why-your-friends-have-more-friends-you-do)

@@ -18,21 +18,23 @@ To calculate this counter-intuitive result, we need Bayes' Theorem. A geometric 
 	<img src="/images/Bayes.png" alt="image">
 </figure>
 
-We write a formula for the quantity that we are interested in, the probability that a person is indeed a drug user given that he or she tests positive for drugs, \\(P(\mbox{user} | +)\\) by acknowledging that we are now only in the world of the positive test circle. The +'s that are actually drug users can be written as the fraction of the '+  test' circle that is overlapped by the 'drug user' circle:
+We write a formula for the quantity that we are interested in, the probability that a person is indeed a drug user given that he or she tests positive for drugs, <span>\\( P(\mbox{user}|+) \\)</span> by acknowledging that we are now only in the world of the positive test circle. The +'s that are actually drug users can be written as the fraction of the '+  test' circle that is overlapped by the 'drug user' circle:
 
 $$P(\mbox{user} | +) = \dfrac{P(\mbox{user and } +)}{ P(+)}.$$
+
 We bring the sensitivity into the picture by considering the fraction of the drug users circle that is occupied by positive test results:
 
 $$P(+ | \mbox{user}) = \dfrac{P(\mbox{user and }+)}{P(\mbox{user})}.$$
+
 Equating the two different ways of writing the joint probability \\(P(\mbox{user and }+)\\), we derive **Bayes' Theorem:**
 
-**$$P(\mbox{user} | +) = \dfrac{P(+ | \mbox{user}) P(\mbox{user})}{P(+)}.$$**
+$$P(\mbox{user} | +) = \dfrac{P(+ | \mbox{user}) P(\mbox{user})}{P(+)}.$$
 
 We already see that, in a population with low drug use, the sensitivity first gets multiplied by a small number, \\(P(\mbox{user})\\). Since we do not directly know \\(P(+)\\), we write it differently by considering two exhaustive ways people can test positive, namely by being a drug user and by not being a drug user. We weigh the two conditional events by the probability of these two different ways:
 
 $$P(+) = P(+ | \mbox{user}) P(\mbox{user}) + P(+ | \mbox{non-user}) P(\mbox{non-user}). $$
 
-As people are users or non-users, \\(P(\mbox{user})+P(\mbox{non-user}) = 1\\). Similarly, we can bring the specificity \\(P(- | \mbox{non-user})\\) into the picture by considering that non-users tested will be either positive or negative.
+As people are users or non-users, <span>\\(P(\mbox{user})+P(\mbox{non-user}) = 1\\)</span>. Similarly, we can bring the specificity <span>\\(P(- | \mbox{non-user})\\)</span> into the picture by considering that non-users tested will be either positive or negative.
 
 $$P(+)= P(+ | \mbox{user}) P(\mbox{user}) + [1 - P(- | \mbox{non-user})] [1-P(\mbox{user})].$$
 
