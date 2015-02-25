@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feature importance in random forests when features are correlated
-excerpt: "Correlations between features affects feature importance measures in random forests."
+excerpt: "Correlations between features affect feature importance measures in random forests."
 comments: true
 categories: articles
 share: true

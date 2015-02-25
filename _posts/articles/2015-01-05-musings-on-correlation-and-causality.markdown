@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Musings on correlation and causality
-excerpt: "Correlation does not include causation."
+excerpt: "Correlation does not imply causation."
 comments: false
 categories: articles
 share: true

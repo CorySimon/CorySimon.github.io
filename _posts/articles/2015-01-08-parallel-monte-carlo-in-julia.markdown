@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Parallel Monte Carlo in Julia
-excerpt: "A tutorial on parallel computing capabilities of Julia. We illustrate by computing pi with a Monte Carlo simulation."
+excerpt: "A tutorial on parallel computing capabilities of Julia. Computing pi with a Monte Carlo simulation."
 comments: false
 categories: articles
 share: true

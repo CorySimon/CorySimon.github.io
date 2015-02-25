@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simpson's Paradox
-excerpt: "In 1973, UC Berkeley was sued for discrimination against women in graduate school admissions. If we take a closer look at the admissions data, this is a case of Simpson's Paradox."
+excerpt: "In 1973, UC Berkeley was sued for discrimination against women in graduate school admissions. If we take a closer look at the admissions data, we find that this is a case of Simpson's Paradox."
 comments: false
 categories: articles
 share: true
