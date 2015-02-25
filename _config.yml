@@ -5,8 +5,8 @@ locale: en_US
 description: Math, Data, Machine learning, Chemical engineering
 logo: cover.jpeg
 search: true
-url: http://localhost:4000
-#url: http://CorySimon.github.io
+#url: http://localhost:4000
+url: http://CorySimon.github.io
 
 # Jekyll configuration
 
