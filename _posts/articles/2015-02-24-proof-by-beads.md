@@ -43,9 +43,9 @@ $$S(n) + [2n+1]= n^2 + [2n+1] = (n+1)^2.$$
 
 The left-hand side can be rewritten by noting that $$2n+1=n+(n+1)$$:
 
-$$S(n)+ [n+ (n+1)] = 1+2+\cdots+ (n-1) + n + (n+1) +n + (n-1) + \cdots + 1 $$
+$$S(n)+ [n+ (n+1)] = 1+2+\cdots+ (n-1) + n + (n+1) +n + (n-1) + \cdots + 1.$$
 
-and thus we have proven that $$S(n+1)=(n+1)^2$$ starting with $$S(n)=n^2$$:
+Can you recognize this as $$S(n+1)$$? We have just proven that $$S(n+1)=(n+1)^2$$ starting with $$S(n)=n^2$$. That is, we have proven:
 
 $$1+2+\cdots+ (n-1) + n + (n+1) +n + (n-1) + \cdots + 1=(n+1)^2,$$
 
