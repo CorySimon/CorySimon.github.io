@@ -8,7 +8,7 @@ share: true
 tags: [mathematics]
 ---
 
-So, you want to generate uniformly distributed random numbers on a unit sphere. Spherical coordinates give us a nice way to ensure that a point $$(x,y,z)$$ is on the sphere for any $$(\theta,\phi)$$:
+So, we want to generate uniformly distributed random numbers on a unit sphere. This came up today in writing a code for molecular simulations. Spherical coordinates give us a nice way to ensure that a point $$(x,y,z)$$ is on the sphere for any $$(\theta,\phi)$$:
 
 {:.center}
 <figure>
@@ -81,7 +81,7 @@ So, close to the poles of the sphere ($$\phi=0$$ and $$\phi=\pi$$), the differen
 
 Our goal is to find the probability distribution $$f(\theta, \phi)$$ that maps from the $$\theta$$-$$\phi$$ plane to a uniform distribution on the sphere.
 
-Let $$v$$ be a point on the unit sphere $$S$$. We want the probability density $$f(v)$$ to be constant for a uniform distribution. Thus $$f(v) = \frac{1}{4\pi}$$ since $$\int \int_S f(v) dA = \frac{1}{4\pi}$$. We want to represent points $$v$$ using the parameterization in $$\theta$$ and $$\phi$$ and find the corresponding probability density function $$f(\theta, \phi)$$ that maps to a uniform distribution on the sphere. We can obtain a uniform distribution by enforcing:
+Let $$v$$ be a point on the unit sphere $$S$$. We want the probability density $$f(v)$$ to be constant for a uniform distribution. Thus $$f(v) = \frac{1}{4\pi}$$ since $$\int \int_S f(v) dA = 1$$ and $$\int \int_S dA = 4\pi$$. We want to represent points $$v$$ using the parameterization in $$\theta$$ and $$\phi$$ and find the corresponding probability density function $$f(\theta, \phi)$$ that maps to a uniform distribution on the sphere. We can obtain a uniform distribution by enforcing:
 
 $$f(v) dA = \frac{1}{4\pi} dA = f(\theta, \phi)d\theta d\phi,$$
 
@@ -174,7 +174,7 @@ And, finally, a uniform distribution of points on the sphere.
 
 An alternative method is to generate three standard normally distributed numbers $$X$$, $$Y$$, and $$Z$$ to form a vector $$V=[X,Y,Z]$$. Intuitively, this vector will have a uniformly random orientation in space, but will not lie on the sphere. If we normalize the vector <span>$$V:=V/\|V\|$$</span>, it will then lie on the sphere.
 
-The following Julia code shows how. We have to be careful in the case that the vector has a norm close to zero, in which we must worry about floating point precision by dividing by a very small number. This is the reason for the `while` loop.
+The following Julia code implements this. We have to be careful in the case that the vector has a norm close to zero, in which we must worry about floating point precision by dividing by a very small number. This is the reason for the `while` loop.
 
 {% highlight Julia %}
 n = 100
@@ -208,7 +208,7 @@ $$f(x,y,z)=f(v)= \left(\frac{1}{\sqrt{2\pi}}e^{- \frac{1}{2}x^2} \right) \left(\
 
 With some algebra:
 
-$$f(x,y,z)=f(v)= \frac{1}{(2\pi)^\frac{3}{2}}e^{- \frac{1}{2}(x^2+y^2+z^2)} = \frac{1}{(2\pi)^\frac{3}{2}}e^{- \frac{1}{2}(\|v\|^2)}.$$
+$$f(x,y,z)=f(v)= \frac{1}{(2\pi)^\frac{3}{2}}e^{- \frac{1}{2}(x^2+y^2+z^2)} = \frac{1}{(2\pi)^\frac{3}{2}}e^{- \frac{1}{2}\|v\|^2}.$$
 
 This shows that the probability distribution of $$v$$ only depends on its magnitude and not any direction $$\theta$$ and $$\phi$$. The vectors $$v$$ are thus indeed pointing in uniformly random directions. By finding where the ray determined by this vector $$v$$ intersects the sphere, we have a sample from a uniform distribution on the sphere.
 
