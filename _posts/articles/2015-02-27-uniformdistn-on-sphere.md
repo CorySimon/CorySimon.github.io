@@ -63,14 +63,14 @@ The distribution in the $$\theta$$-$$\phi$$ plane in this strategy is uniform:
 	<img src="/images/sphere/incorrect.png" alt="image">
 </figure>
 
-This *incorrect* strategy yields the following distribution of points on the sphere. We see that the points are clustered around the poles ($$\phi=0$$ and $$\phi=\pi$$) and sparse around the equator ($$\phi=\pi/2$$).
+After mapping these points in the $$\theta$$-$$\phi$$ plane to the sphere using the relationship between spherical and Cartesian coordinates above, this *incorrect* strategy yields the following distribution of points on the sphere. We see that the points are clustered around the poles ($$\phi=0$$ and $$\phi=\pi$$) and sparse around the equator ($$\phi=\pi/2$$).
 
 {:.center}
 <figure>
 	<img src="/images/sphere/incorrectdistn.png" alt="image">
 </figure>
 
-The reason for this is that the area $$dA$$ of a differential surface element in spherical coordinates is $$dA(d\theta, d\phi) =r^2 \sin (\phi) d\phi d\theta$$. This formula for the area of a differential surface element comes from treating it as a square of dimension $$r d\phi$$ by $$r \sin(\phi)d\theta$$. 
+The reason for this is that the area $$dA$$ of a differential surface element in spherical coordinates is $$dA(d\theta, d\phi) =r^2 \sin (\phi) d\phi d\theta$$. This formula for the area of a differential surface element comes from treating it as a square of dimension $$r d\phi$$ by $$r \sin(\phi)d\theta$$. These dimensions of the differential surface element come from simple trigonometry.
 
 {:.center}
 <figure>
@@ -79,7 +79,7 @@ The reason for this is that the area $$dA$$ of a differential surface element in
 
 So, close to the poles of the sphere ($$\phi=0$$ and $$\phi=\pi$$), the differential surface area element determined by $$d\theta$$ and $$d\phi$$ gets smaller since $$\sin(\phi)\rightarrow 0$$. Thus, we should include less points near $$\phi=0$$ and $$\phi=\pi$$ and more points near $$\phi=\pi/2$$ to achieve a uniform distribution on the sphere.
 
-Our goal is to find the probability distribution $$f(\theta, \phi)$$ that maps from the $$\theta$$-$$\phi$$ plane to a uniform distribution on the sphere.
+Our goal is to find and then draw samples from the probability distribution $$f(\theta, \phi)$$ that maps from the $$\theta$$-$$\phi$$ plane to a uniform distribution on the sphere.
 
 Let $$v$$ be a point on the unit sphere $$S$$. We want the probability density $$f(v)$$ to be constant for a uniform distribution. Thus $$f(v) = \frac{1}{4\pi}$$ since $$\int \int_S f(v) dA = 1$$ and $$\int \int_S dA = 4\pi$$. We want to represent points $$v$$ using the parameterization in $$\theta$$ and $$\phi$$ and find the corresponding probability density function $$f(\theta, \phi)$$ that maps to a uniform distribution on the sphere. We can obtain a uniform distribution by enforcing:
 
@@ -93,9 +93,9 @@ $$f(\theta) = \int_0^{\pi} f(\theta, \phi) d\phi = \frac{1}{2\pi}$$
 
 $$f(\phi) = \int_0^{2\pi} f(\theta, \phi) d\theta = \frac{\sin(\phi)}{2}.$$
 
-We see that $$\theta$$ is a uniformly distributed variable, but $$f(\phi)$$ intuitively scales with $$\sin(\phi)$$; we want more points around the equator, $$\phi = \pi/2$$, which is where $$\sin(\phi)$$ takes its maximum. 
+We see that $$\theta$$ is a uniformly distributed variable and $$f(\phi)$$ scales with $$\sin(\phi)$$; we want more points around the equator, $$\phi = \pi/2$$, which is where $$\sin(\phi)$$ takes its maximum. 
 
-Now, how to generate numbers $$\phi$$ according to the distribution $$f(\phi)$$? We'd like to use the uniform random number generator in $$[0,1]$$ as before. [Inverse Transform Sampling](http://en.wikipedia.org/wiki/Inverse_transform_sampling) is a method that allows us to sample a general probability distribution using a uniform random number. For this, we need the cumulative distribution function of $$\phi$$:
+Now, how can we sample numbers $$\phi$$ that follow the distribution $$f(\phi)$$? We'd like to use the readily available uniform random number generator in $$[0,1]$$ as before. [Inverse Transform Sampling](http://en.wikipedia.org/wiki/Inverse_transform_sampling) is a method that allows us to sample a general probability distribution using a uniform random number. For this, we need the cumulative distribution function of $$\phi$$:
 
 $$F(\phi) = \int_0^\phi f(\hat{\phi})d\hat{\phi} = \frac{1}{2} (1-\cos(\phi)).$$
 
@@ -152,7 +152,7 @@ int main(int argc, char *argv[]) {
 }
 {% endhighlight %}
 
-We then get the following distribution of points in the $$(\theta, \phi)$$ plane. There are more points around $$\phi=\pi/2$$ (the equator) than at the poles ($$\phi = 0, \pi$$), as we had hoped for.
+We then get the following distribution of points in the $$(\theta, \phi)$$ plane. There are more points around $$\phi=\pi/2$$ (the equator) than around the poles ($$\phi = 0, \pi$$), as we had hoped for.
 
 {:.center}
 <figure>
@@ -166,13 +166,9 @@ And, finally, a uniform distribution of points on the sphere.
 </figure>
 
 
-
-
-
-
 ## Alternative method
 
-An alternative method is to generate three standard normally distributed numbers $$X$$, $$Y$$, and $$Z$$ to form a vector $$V=[X,Y,Z]$$. Intuitively, this vector will have a uniformly random orientation in space, but will not lie on the sphere. If we normalize the vector <span>$$V:=V/\|V\|$$</span>, it will then lie on the sphere.
+An alternative method to generate uniformly disributed points on a unit sphere is to generate three standard normally distributed numbers $$X$$, $$Y$$, and $$Z$$ to form a vector $$V=[X,Y,Z]$$. Intuitively, this vector will have a uniformly random orientation in space, but will not lie on the sphere. If we normalize the vector <span>$$V:=V/\|V\|$$</span>, it will then lie on the sphere.
 
 The following Julia code implements this. We have to be careful in the case that the vector has a norm close to zero, in which we must worry about floating point precision by dividing by a very small number. This is the reason for the `while` loop.
 
@@ -202,7 +198,7 @@ To prove this, note that the standard normal distribution is:
 
 $$f(x) = \frac{1}{\sqrt{2\pi}}e^{- \frac{1}{2}x^2}.$$
 
-As $$X$$, $$Y$$, and $$Z$$ each follow the standard normal distribution, it follows that:
+As $$X$$, $$Y$$, and $$Z$$ each follow the standard normal distribution and are generated independently:
 
 $$f(x,y,z)=f(v)= \left(\frac{1}{\sqrt{2\pi}}e^{- \frac{1}{2}x^2} \right) \left(\frac{1}{\sqrt{2\pi}}e^{- \frac{1}{2}y^2} \right) \left(\frac{1}{\sqrt{2\pi}}e^{- \frac{1}{2}z^2} \right).$$
 
