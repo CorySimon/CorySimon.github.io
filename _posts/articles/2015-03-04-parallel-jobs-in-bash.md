@@ -60,7 +60,7 @@ do
 done
 {% endhighlight %}
 
-The ampersand `&` essentially allows the script to execute the entire loop without sequentially waiting for the previous `./simulate $P` job to finish.
+The ampersand `&` spawns the job `./simulate $P` in the background and allows the loop to continue to the next iteration without waiting for this `./simulate $P` job to finish.
 
 This script is dangerous. What if we have 1000 pressures? What if our laptop only has three cores-- not enough to assign each of the six pressures to different cores?
 
@@ -82,7 +82,7 @@ do
 done
 {% endhighlight %}
 
-The last line in the loop tells Bash to wait for all background jobs to finish before continuing in the loop once we have spawned `nprocs` background jobs.
+The last line in the loop tells Bash to wait for all background jobs to finish before continuing to the next iteration in the loop once we have spawned `nprocs` background jobs.
 
 Can you see an inefficiency in the above script? While much faster than the serial script, this process of submitting jobs suffers from bad *load balancing*. For `nprocs=4`, we will submit the jobs for `P=1,10,100,1000` and wait for *all* to finish. But, the simulation at the higher pressure will take much longer than at the lower pressure since there will be more gas molecules in the system. Yet, my program still waits for *all* four jobs to finish before submitting the next batch; some cores will thus be idle as I am waiting for the `P=1000` job to finish.
 
