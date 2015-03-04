@@ -62,7 +62,7 @@ done
 
 The ampersand `&` essentially allows the script to execute the entire loop without sequentially waiting for the previous `./simulate $P` job to finish.
 
-This script is dangerous. What if we have 1000 pressures? What if our laptop only has three cores-- not enough to assign each of the six pressures to different cores?.
+This script is dangerous. What if we have 1000 pressures? What if our laptop only has three cores-- not enough to assign each of the six pressures to different cores?
 
 The `wait` command in Bash will wait for all jobs currently running in the background to finish before proceeding in the script. I set up my script to automatically detect the number of cores on my computer, then start one background job for each core, then wait for these jobs to finish before loading the cores with jobs again. This script can handle 1000 pressure points without overloading my computer with simulations.
 
