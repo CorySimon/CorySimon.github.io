@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Just how big is the tip of the iceberg?
+title: How big is the tip of the iceberg?
 excerpt: "We can use a back-of-the-envelope calculation to estimate the fraction of an iceberg that is submerged in water."
 comments: false
 categories: articles
