@@ -33,7 +33,7 @@ The fluid would exert a force on the marble at every point on its surface in a d
 
 Back to the iceberg.
 
-The [density of ice](http://en.wikipedia.org/wiki/Ice) is $$\rho_{ice}=917$$ kg/m<sup>3</sup>, and the [density of salty seawater](http://en.wikipedia.org/wiki/Seawater) is around $$\rho_{seawater}=1025$$ kg/m<sup>3</sup>. Since seawater has a higher density than ice, the weight of the ice is less than that of the equivalent volume of seawater; Archimedes' Principle tells us that an iceberg will float, then, since the buoyant force on the iceberg when fully submerged is greater than the weight of the iceberg. 
+The [density of ice](http://en.wikipedia.org/wiki/Ice) is $$\rho_{ice} \approx 917$$ kg/m<sup>3</sup>, and the [density of salty seawater](http://en.wikipedia.org/wiki/Seawater) is around $$\rho_{seawater} \approx 1025$$ kg/m<sup>3</sup>. Since seawater has a higher density than ice, the weight of the ice is less than that of the equivalent volume of seawater; Archimedes' Principle tells us that an iceberg will float, then, since the buoyant force on the iceberg when fully submerged is greater than the weight of the iceberg. 
 
 Let's finally calculate the fraction of the iceberg that will be submerged when it floats. The iceberg will be at equilibrium when the buoyant force by the seawater is equal to the gravitational force on the iceberg itself. Let $$V$$ be the volume of the iceberg and $$\eta$$ be the fraction of the iceberg that is beneath the surface, for which we will solve. So $$\eta V$$ is the volume of iceberg that is submerged.
 
