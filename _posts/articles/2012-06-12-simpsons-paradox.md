@@ -10,6 +10,7 @@ tags: [statistics]
 
 In 1973, UC Berkeley was sued for discrimination against women in graduate school admissions. The data of percent acceptance indisputably show that, if a male applies to Berkeley, he is more likely to be admitted than a female that applies (44% vs. 35%).
 
+{:.center}
 <figure>
 	<img src="/images/simpsonsparadox/amalg.png" alt="image">
 </figure>
