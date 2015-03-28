@@ -38,25 +38,25 @@ $$S(t+s) = S(t) S(s).$$
 
 From here, the trick is to consider $$s,t=\frac{1}{2}$$. Then,
 
-$$S(1) =S(\frac{1}{2}+\frac{1}{2})=S(\frac{1}{2})S(\frac{1}{2})=S(\frac{1}{2})^2.$$
+$$S(1) =S\left(\frac{1}{2}+\frac{1}{2}\right)=S\left(\frac{1}{2}\right)S\left(\frac{1}{2}\right)=S\left(\frac{1}{2}\right)^2.$$
 
 We see a pattern if we split $$1$$ into a different fraction:
 
-$$S(1) = S(3\frac{1}{3})=S(\frac{1}{3}+\frac{1}{3}+\frac{1}{3})=S(\frac{1}{3})S(\frac{1}{3}+\frac{1}{3})=S(\frac{1}{3})^3.$$
+$$S(1) = S\left(3\frac{1}{3}\right)=S\left(\frac{1}{3}+\frac{1}{3}+\frac{1}{3}\right)=S\left(\frac{1}{3}\right)S\left(\frac{1}{3}+\frac{1}{3}\right)=S\left(\frac{1}{3}\right)^3.$$
 
 The pattern is that for integers $$n>0$$:
 
-$$S(1)=S(\frac{1}{n})^n.$$
+$$S(1)=S\left(\frac{1}{n}\right)^n.$$
 
 We can also write for any integer $$m$$:
 
-$$S(m\frac{1}{n})=S(\frac{1}{n}+\frac{1}{n}+...+\frac{1}{n})=S(\frac{1}{n}+\frac{m-1}{n})=S(\frac{1}{n})S(\frac{m-1}{n})=...=S(\frac{1}{n})^m.$$
+$$S\left(m\frac{1}{n}\right)=S\left(\frac{1}{n}+\frac{1}{n}+...+\frac{1}{n}\right)=S\left(\frac{1}{n}+\frac{m-1}{n}\right)=S\left(\frac{1}{n}\right)S\left(\frac{m-1}{n}\right)=...=S\left(\frac{1}{n}\right)^m.$$
 
-Substituting into this our formula above for $$S(\frac{1}{n})$$ related to $$S(1)$$:
+Substituting into this our formula above for $$S\left(\frac{1}{n}\right)$$ related to $$S(1)$$:
 
-$$S(\frac{m}{n})=[S(1)^\frac{1}{n} ]^m = S(1)^\frac{n}{m}.$$
+$$S\left(\frac{m}{n}\right)=[S(1)^\frac{1}{n} ]^m = S(1)^\frac{m}{n}.$$
 
-By choosing $$m$$ and $$n$$, we can approximate any real number $$t>0$$ with $$\frac{n}{m}$$, so we can write
+By choosing $$m$$ and $$n$$, we can approximate any real number $$t>0$$ with $$\frac{m}{n}$$, so we can write
 
 $$S(t) = S(1)^t.$$
 
