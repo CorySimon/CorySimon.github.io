@@ -166,7 +166,7 @@ And, finally, a uniform distribution of points on the sphere.
 </figure>
 
 
-## Alternative method
+## Alternative method 1
 
 An alternative method to generate uniformly disributed points on a unit sphere is to generate three standard normally distributed numbers $$X$$, $$Y$$, and $$Z$$ to form a vector $$V=[X,Y,Z]$$. Intuitively, this vector will have a uniformly random orientation in space, but will not lie on the sphere. If we normalize the vector <span>$$V:=V/\|V\|$$</span>, it will then lie on the sphere.
 
@@ -208,3 +208,8 @@ $$f(x,y,z)=f(v)= \frac{1}{(2\pi)^\frac{3}{2}}e^{- \frac{1}{2}(x^2+y^2+z^2)} = \f
 
 This shows that the probability distribution of $$v$$ only depends on its magnitude and not any direction $$\theta$$ and $$\phi$$. The vectors $$v$$ are thus indeed pointing in uniformly random directions. By finding where the ray determined by this vector $$v$$ intersects the sphere, we have a sample from a uniform distribution on the sphere.
 
+## Alternative method 2
+
+Credit to [FX Coudert](https://twitter.com/fxcoudert) for pointing this out in a comment, another method is to generate uniformly distributed numbers in the cube $$[-1,1]^3$$ and ignore any points that are further than a unit distance $$r$$ from the origin. This will ensure a uniform distribution in the region $$r \leq 1$$. Next, normalize each random vector to have unit norm so that the vector retains its direction but is extended to the sphere of unit radius. As each vector within the region $$r\leq1$$ has a random direction, these points will be uniformly distributed on a sphere of radius 1.
+
+Alternative method 1 can be used to *efficiently* generate uniformly distributed numbers on a hypersphere-- i.e. in higher dimensions. On the other hand, as the number of dimensions grows, the ratio of the volume of the edges of a cube to the volume of the ball inside of it grows (see [Wikipedia article](http://en.wikipedia.org/wiki/Volume_of_an_n-ball)). Hence, a larger and larger fraction of the uniformly generated numbers in the cube will be rejected using Alternative method 2, and so this algorithm will be inefficient. 
