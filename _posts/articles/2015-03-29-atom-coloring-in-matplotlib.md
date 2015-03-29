@@ -29,7 +29,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-df_colors = pd.read_csv("cpk.csv")
+# d/l here: https://github.com/CorySimon/JMolColors
+df_colors = pd.read_csv("jmolcolors.csv")
 
 def get_color(atom):
     """
