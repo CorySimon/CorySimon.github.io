@@ -15,12 +15,12 @@ Imagine we are interested in the following chemical structure, which is composed
 
 The colors of the atoms in the structure visualization, which I made in [VisIt visualization tool](https://wci.llnl.gov/simulation/computer-codes/visit/), correspond to the standard colors used in [JMol](http://jmol.sourceforge.net/). A data visualization regarding the atom types in this chemical structure should utilize the corresponding colors for consistency.
 
-As a toy example, say we desire a bar plot that counts the number of atom types in the structure. We can make this in Python's plotting library Matplotlib. What follows is a tutorial of how to make the colors in a visualization correspond to the colors in JMol. The final product:
+As a toy example, say we desire a bar plot that counts the number of atom types in the structure. We can make this in Python's plotting library Matplotlib. What follows is a tutorial of how to make the colors in a Matplotlib visualization correspond to the colors in JMol. The final product:
 
 {:.center}
 <img src="/images/atomcolors/toy.png" align="middle" alt="" height="450" width="450">
 
-I found a list of the RGB (red, green, blue) tuples that are used for the color of each atom [here](http://jmol.sourceforge.net/jscolors/). I took these from the website and put them in a .csv, which I put on [GitHub](https://github.com/CorySimon/JMolColors).
+A list of the RGB (red, green, blue) tuples that are used for the color of each atom is on the [JMol website](http://jmol.sourceforge.net/jscolors/). I put a .csv of these colors on [GitHub](https://github.com/CorySimon/JMolColors).
 
 Using Pandas to load these RGB tuples into a DataFrame, I wrote a function that takes an atom type as an input and returns an RGB tuple that we will send to the plotting library Matplotlib:
 
@@ -54,13 +54,13 @@ df_toy["Atoms"] = np.array(["C", "H", "O"], dtype=str)
 df_toy["Counts"] = np.array([8, 4, 4])  # atom counts
 {% endhighlight %}
 
-To make the bar plot, we need to define the array of colors for the atoms in `df_toy`. We can do this with a list comprehension calling `get_color()`:
+To make the bar plot, we need to define the array of colors corresponding to the atoms in `df_toy`. We can do this with a list comprehension calling `get_color()`:
 
 {% highlight python %}
 colors = [get_color(a) for a in df_toy['Atoms']]
 {% endhighlight %}
 
-Now, `colors` is a list of RGB color tuples corresponding to `C`, `H`, and `O`. We can pass this list of colors to Matplotlib, as shown in making the bar plot above:
+Now, `colors` is a list of RGB color tuples corresponding to `C`, `H`, and `O`. We can pass this list of colors to Matplotlib to make the bar plot shown above:
 
 {% highlight python %}
 fig, ax = plt.subplots()
