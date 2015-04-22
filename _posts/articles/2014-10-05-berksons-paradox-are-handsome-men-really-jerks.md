@@ -18,7 +18,7 @@ Berkson's paradox is that, if we restrict ourselves to the cases where events A 
 
 <div>$$P(A | B, A \mbox{ or } B) < P(A | A \mbox{ or } B).$$</div>
 
-The reason that this result is counter-intuitive is that A and B are independent events -- $$P(A | B) =P(A)$$ -- but they become negatively dependent on each other when we restrict ourselves to the cases that A or B occurs. We will see that Berkson's paradox is a form of selection bias; in restricting ourselves to A or B, we ignore the cases where both A and B do not occur.
+The reason that this result is counter-intuitive is that A and B are independent events -- <span>$$P(A | B) =P(A)$$</span> -- but they become negatively dependent on each other when we restrict ourselves to the cases that A or B occurs. We will see that Berkson's paradox is a form of selection bias; in restricting ourselves to A or B, we ignore the cases where both A and B do not occur.
 
 Berkson's paradox can be used to explain the exacerbation of stereotype that the most handsome men are jerks and that the nicest men are ugly, proposed by Jordan Ellenberg in his book How Not to Be Wrong.
 
