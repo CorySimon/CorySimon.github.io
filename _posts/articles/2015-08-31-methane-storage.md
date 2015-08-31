@@ -8,7 +8,7 @@ share: true
 tags: [chemistry, chemical engineering]
 ---
 
-We wrote an article in a scientific journal for kids, Frontiers for Young Minds, describing my research our using sponge-like materials to store natural gas onboard vehicles. The article is a nice read for adults as well!
+We wrote an article in a scientific journal for kids, Frontiers for Young Minds, describing our research on using sponge-like materials to store natural gas onboard vehicles. The article is a nice read for adults as well!
 
 You can read it here:
 [http://kids.frontiersin.org/article/10.3389/frym.2015.00011](http://kids.frontiersin.org/article/10.3389/frym.2015.00011)
