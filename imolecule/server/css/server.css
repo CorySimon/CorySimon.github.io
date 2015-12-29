@@ -1,0 +1,138 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  background-color: #222;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+  background-repeat: repeat;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+
+  -webkit-overflow-scrolling: touch;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.32;
+  margin: 10px 0 10px 0;
+}
+
+a {
+  color: #2f4ff7;
+  cursor: pointer;
+  text-decoration: none;
+
+  -webkit-transition: 0.15s color ease;
+     -moz-transition: 0.15s color ease;
+      -ms-transition: 0.15s color ease;
+       -o-transition: 0.15s color ease;
+          transition: 0.15s color ease;
+}
+
+a:hover {
+  color: #6282ff;
+}
+
+h1,
+h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+select,
+button {
+  background: #2f4ff7;
+  border: 0;
+  border-radius: 1px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  height: 35px;
+  padding: 5px;
+  width: 100px;
+
+  text-align: left;
+
+  -webkit-transition: 0.15s background ease;
+     -moz-transition: 0.15s background ease;
+      -ms-transition: 0.15s background ease;
+       -o-transition: 0.15s background ease;
+          transition: 0.15s background ease;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+          appearance: none;
+}
+
+select:hover,
+button:hover,
+select:active,
+button:active {
+  background: #6282ff;
+}
+
+.avgrund-popup > button {
+  width: 133px;
+}
+
+#avgrund-buttons > button,
+#header-container > button,
+#header-container > select,
+.header > button,
+.header > select {
+  font-size: 16px;
+  margin: 10px 20px 0 0;
+  text-align: center;
+  width: 150px;
+}
+
+#right-avgrund {
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+}
+
+#formats {
+  width: 100%;
+}
+
+#imolecule {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#options {
+  bottom: 0;
+  margin: 20px 40px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  width: 100%;
+}
+
+#options > p {
+  margin-right: 5px;
+}

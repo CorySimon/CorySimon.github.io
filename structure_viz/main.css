@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #fff;
+  color: #444;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: justify;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1 {
+  color: #222;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+a {
+  cursor: pointer;
+  color: #22a;
+  text-decoration: none;
+
+  -webkit-transition: 0.15s color ease;
+     -moz-transition: 0.15s color ease;
+      -ms-transition: 0.15s color ease;
+       -o-transition: 0.15s color ease;
+          transition: 0.15s color ease;
+}
+a:hover {
+  color: #2f4ff7;
+}
+
+.molecule {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.description {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
+  left: 30px;
+  margin: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 30px;
+  width: 300px;
+  z-index: 100;
+}
