@@ -1,0 +1,28 @@
+{
+    "atoms": [
+        { "charge": -0.041825, "element": "C", "location": [ -0.868177, -0.169929, 0.188545 ] },
+        { "charge": 0.041384, "element": "C", "location": [ 0.646410, -0.166827, 0.184003 ] },
+        { "charge": -0.395277, "element": "O", "location": [ 1.127688, 1.019486, -0.430778 ] },
+        { "charge": 0.025164, "element": "H", "location": [ -1.254506, -1.073132, 0.669021 ] },
+        { "charge": 0.025164, "element": "H", "location": [ -1.258744, -0.119638, -0.833154 ] },
+        { "charge": 0.025164, "element": "H", "location": [ -1.253561, 0.706257, 0.720236 ] },
+        { "charge": 0.055421, "element": "H", "location": [ 1.038945, -1.029718, -0.362451 ] },
+        { "charge": 0.055421, "element": "H", "location": [ 1.032207, -0.201639, 1.206971 ] },
+        { "charge": 0.209383, "element": "H", "location": [ 0.789737, 1.035139, -1.342393 ] }
+    ],
+    "bonds": [
+        { "atoms": [ 0, 1 ], "order": 1 },
+        { "atoms": [ 1, 2 ], "order": 1 },
+        { "atoms": [ 0, 3 ], "order": 1 },
+        { "atoms": [ 0, 4 ], "order": 1 },
+        { "atoms": [ 0, 5 ], "order": 1 },
+        { "atoms": [ 1, 6 ], "order": 1 },
+        { "atoms": [ 1, 7 ], "order": 1 },
+        { "atoms": [ 2, 8 ], "order": 1 }
+    ],
+    "formula": "C2H6O",
+    "molecular_weight": 46.068440,
+    "units": {
+        "molecular_weight": "g / mol"
+    }
+}
