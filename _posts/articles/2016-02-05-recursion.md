@@ -8,7 +8,7 @@ share: true
 tags: [programming]
 ---
 
-I encountered a problem where I needed to program a nested loop and wanted to share.
+I encountered a problem where I needed to program a nested loop and wanted to share (code is in Julia).
 
 *Problem:* We have a lattice with `n` ordered lattice sites, each of which are in state `-1` or `1`. There are thus $$2^n$$ distinct lattice states. My goal is to exhaustively enumerate each of these lattice states.
 
@@ -103,7 +103,7 @@ function nested_loop(loop_level::Int)
 end
 {% endhighlight %}
 
-Now, I call the `nested_loop` function with `loop_level=1` to start at the first loop in the nest. It will then print all `n = 8` configurations of the lattice, represented by unique `lattice_state` arrays:
+Now, I call the `nested_loop` function with `loop_level=1` to start at the first loop in the nest. It will then print all $$2^n$$ configurations of the lattice of length `n=8`, represented by unique `lattice_state` arrays:
 
 {% highlight julia %}
 nested_loop(1)
