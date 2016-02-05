@@ -86,18 +86,23 @@ function nested_loop(loop_level::Int)
 
     Prints all possible lattice_state arrays.
     Parameters:
-        loop_level, Int: level of nested loop we are in. Nested loop `loop_level` modifies entry `loop_level` in `lattice_state`. 
+        loop_level, Int: level of nested loop we are in.
+        Nested loop `loop_level` modifies entry `loop_level` in `lattice_state`. 
     """
-    # if we are the last loop, print the array and return (do not go on)
+    # if we are the last loop,
+    # print the array and return (do not go on)
     if (loop_level > n)
         println(lattice_state)
         return
     end
-    # if we made it past this point, we need to continue going in the nested loop
+    # if we made it past this point, 
+    # we need to continue going in the nested loop
     for i = [-1, 1]
         # modify entry loop_level
         lattice_state[loop_level] = i
-        # with entry 1, 2, ..., loop_level fixed, call function again to go to next level in nested loop
+
+        # with entry 1, 2, ..., loop_level fixed, 
+        # call function again to go to next level in nested loop
         nested_loop(loop_level + 1)
     end
 end
