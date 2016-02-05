@@ -14,7 +14,7 @@ I encountered a problem where I needed to program a nested loop and wanted to sh
 
 We can store the state of the lattice in an `n`-dimensional array of integers, `lattice_state`. For `n=2`, we can use a nested for loop to enumerate all lattice states. Each for loop represents a particular lattice site, or entry of `lattice_state`.
 
-```julia
+```Julia
 n = 2
 lattice_state = zeros(Int, n)
 for i = [-1, 1]
@@ -33,7 +33,7 @@ end
 
 When `n` gets large, this looks ugly because we need to write `n` nested loops:
 
-{% highlight julia %}
+```Julia
 n = 4
 lattice_state = zeros(Int, n)
 for i = [-1, 1]
@@ -66,11 +66,11 @@ end
  # [1,1,-1,1]
  # [1,1,1,-1]
  # [1,1,1,1]
-{% endhighlight %}
+```
 
 We can use a recursive algorithm instead to write a function for a general `n`:
 
-{% highlight julia %}
+```Julia
 n = 8
 lattice_state = zeros(Int, n)
 function nested_loop(loop_level::Int)
@@ -101,10 +101,10 @@ function nested_loop(loop_level::Int)
         nested_loop(loop_level + 1)
     end
 end
-{% endhighlight %}
+```
 
 Now, I call the `nested_loop` function with `loop_level=1` to start at the first loop in the nest. It will then print all $$2^n$$ configurations of the lattice of length `n=8`, represented by unique `lattice_state` arrays:
 
-{% highlight julia %}
+```Julia
 nested_loop(1)
-{% endhighlight %}
+```
