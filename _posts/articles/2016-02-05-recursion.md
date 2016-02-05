@@ -14,7 +14,7 @@ I encountered a problem where I needed to program a nested loop and wanted to sh
 
 We can store the state of the lattice in an `n`-dimensional array of integers, `lattice_state`. For `n=2`, we can use a nested for loop to enumerate all lattice states. Each for loop represents a particular lattice site, or entry of `lattice_state`.
 
-{% highlight julia %}
+```julia
 n = 2
 lattice_state = zeros(Int, n)
 for i = [-1, 1]
@@ -29,7 +29,7 @@ end
  # [-1,1]
  # [1,-1]
  # [1,1]
-{% endhighlight %}
+```
 
 When `n` gets large, this looks ugly because we need to write `n` nested loops:
 
