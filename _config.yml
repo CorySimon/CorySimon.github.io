@@ -13,7 +13,7 @@ url: http://CorySimon.github.io
 permalink:   /:categories/:title/
  # markdown:    redcarpet
 markdown:    kramdown
-highlighter: rogue
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
