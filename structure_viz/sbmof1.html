@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SBMOF-1</title>
+        <link href="main.css" rel="stylesheet" type="text/css" />
+        <script src="../imolecule/js/jquery-1.11.1.min.js"></script>
+        <script src="../imolecule/js/build/imolecule.min.js"></script>
+    </head>
+    <body>
+        <div class="molecule"></div>
+        <div class="description">
+            <h1>Discovering materials on a computer</h1>
+            <p>
+            Nuclear energy is an affordable, highly dense energy source, and the world's supply of fissile material is abundant. 
+            The carbon footprint of nuclear power is much smaller than that of coal and natural gas. 
+            A major environmental concern with nuclear energy, however, is the associated hazardous radioactive waste that needs to be sequestered in a geological repository for thousands of years.
+            </p>
+            <p> 
+            By reprocessing used nuclear fuel, we can recover fissile material for recycling-- making the most of the fuel we have-- and mitigate the volume of radioactive waste that we need to sequester.
+            For more information, watch <a href="https://www.youtube.com/watch?v=MlMDDhQ9-pE">this video</a>. 
+            An engineering problem associated with used nuclear fuel reprocessing is the release of radioactive gases xenon and krypton. These radioactive noble gases evolve into the air of used nuclear fuel reprocessing facilities in parts per million concentrations and must be captured.
+            </p> 
+            A relatively new class of materials, metal-organic frameworks (MOFs), have nano-sized pores that serve as parking spaces for gas molecules. Depending on the chemistry of the particular MOF, the MOF may highly prefer to adsorb one gas species over another. Because of this property, MOFs hold promise to act as selective sponges and capture radioactive gases from used nuclear fuel reprocessing facilities in a room-temperature process.
+            <p>
+            <p>
+            The chemistry of MOFs is highly tunable, and over 10,000 different MOFs have been reported. Which of these MOFs exhibit chemistry that is optimal for capturing radioactive noble gases? Due to constrained resources and time, chemists cannot test all of these MOFs.
+            </p>
+            <p> We used computer simulations to rapidly and cost-effectively sift through thousands of reported MOF structures and predict which MOF is the best for capturing noble gas xenon. Our models predicted that SBMOF-1, shown on the right, would be the most xenon-selective material. Our colleagues at Pacific Northwest National Lab then synthesized SBMOF-1 and measured its capability to selectively adsorb xenon over other gases. SBMOF-1 exhibits the highest xenon selectivity ever reported! Published in <a href="http://www.nature.com/ncomms/2016/160613/ncomms11831/full/ncomms11831.html">Nature Communications</a>, this is a rare case of a computationally-inspired discovery of a material!
+            </p>
+            <p>
+            The visualization of the structure of SBMOF-1 on the right is interactive. Click and hold to grab, then drag, and/or move your mouse scroll bar to zoom in and out.
+            </p>
+            
+        </div>
+
+        <script type="text/javascript">
+            imolecule.create('.molecule');
+            $.getJSON('sbmof1.json', function (drug) {
+                imolecule.draw(drug);
+            });
+            
+        </script>
+    </body>
+</html>
