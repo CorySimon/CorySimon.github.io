@@ -2,6 +2,8 @@
 layout: post
 title: Periodic functions as art
 excerpt: "Mathematics in an art museum."
+image:
+    thumb: /images/DSC_0077.JPG
 comments: true
 categories: articles
 share: true
