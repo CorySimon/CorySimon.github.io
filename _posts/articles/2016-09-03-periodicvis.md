@@ -1,0 +1,20 @@
+---
+layout: post
+title: Periodic function visualizations
+excerpt: "Mathematics in an art museum."
+comments: true
+categories: articles
+share: true
+tags: [math and art]
+---
+
+I came across this interesting piece of art by Paul Brand at the Norwegian Museum of Contemporary Art in Oslo, Norway. Vials are evenly arranged on a circle, and each vial contains a different amount of blue liquid.
+
+{:.center}
+<figure>
+    <img src="/images/DSC_0077.JPG" alt="image">
+</figure>
+
+This is a method to visualize a periodic function $f(\theta)$ with a period of $2\pi$. Each vial is a sample of the function value at that particular polar coordinate, $\theta$. The height of the liquid in that vial then represents the value of the function.
+
+Note the larger difference in liquid level between the top-most vial and the vial to the left of it. This suggests that the artist may have chosen a *discontinuous* $2\pi$-periodic function to visualize here. But, in reality, the behavior of the function is unknown between each vial with this visualization strategy.
