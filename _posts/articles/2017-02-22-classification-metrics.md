@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Recall, precision, specificity, and sensitivity
+excerpt: "Illustration of recall, precision, specificity, and sensitivity"
 comments: true
 categories: articles
 share: true
