@@ -111,7 +111,7 @@ function parallel_pi_computation(N::Int; ncores::Int=8)
 end
 {% endhighlight %}
 
-Calling this function `parallel_pi_compute(8000000000)` will then compute \\(\pi\\) with 8 billion samples, sending a job with 1 billion samples to each of the 8 cores.
+Calling this function `parallel_pi_computation(8000000000)` will then compute \\(\pi\\) with 8 billion samples, sending a job with 1 billion samples to each of the 8 cores.
 
 Using the `@time` macro, we can see the speed up using the parallelized implementation. The parallel implementation is about five times faster than the serial implementation!
 
