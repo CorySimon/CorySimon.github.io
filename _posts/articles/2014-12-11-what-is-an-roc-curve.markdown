@@ -84,24 +84,28 @@ By considering these two extreme scenarios, we can invent a performance metric f
 
 In this toy example to illustrate ROC curves, we pretended that we knew the true distribution of $$y(x)$$ for the two classes and that $$x$$ was just a number. More commonly, a classification algorithm, such as a neural network, takes a feature vector $$x$$ in a high-dimensional space and outputs some number $$p(x)\in[0,1]$$ that can be interpreted as the probability that the given data point $$x$$ belongs to class 1 ($$y(x)=1$$). The ROC curve in this scenario corresponds to the discrimination threshold $$p^*$$ on $$p(x)$$ such that we map the set $$\{x:p(x) > p^*\}$$ to a classification $$y(x)=1$$ and the set $$\{x:p(x) < p^*\}$$ to a classification $$y(x)=0$$. We can then compute the AUC of the neural network on a test data set to evaluate the performance of the classification. The discrimination threshold $$p^*$$ is now not a threshold imposed on the feature, but a threshold imposed on the model's prediction. Still, the above ideas about trade-offs between false negatives and false positives hold.
 
-Finally, I will show that the AUC is actually the probability that our classification algorithm will rank a randomly chosen data point, $$x_1$$, that belongs to class $$y=1$$ higher than a randomly chosen data point, $$x_0$$ that belongs to class $$y=0$$. i.e. that $$p(x_1)>p(x_0)$$.
+## Interpretation of the area under the curve (AUC)
 
-Let $$f_0(p)$$ be the probability density function of predictions $$p(x)$$ from our algorithm of all $$x$$ that are true 0's and $$f_1(p)$$ the p.d.f. of the predictions for those that are true 1's. The true positive rate (TPR) and false positive rate (FPR) for a given discrimination threshold $$p^*$$ is the integral of the tails of these distributions:
+We now prove that the area under the ROC curve is the probability that the classification algorithm will rank a randomly chosen data point, $$x_1$$, that belongs to class $$y=1$$ higher than a randomly chosen data point, $$x_0$$, that belongs to class $$y=0$$ (i.e., that $$p(x_1)>p(x_0)$$). We assume that the algorithm only predicts probabilities $$p \in [0,1]$$.
 
-$$FPR(p^*) = \int ^{\infty} _{p^*} f_0 (p)dp $$
+Let $$f_0(p)$$ be the probability density function (p.d.f.) of predictions $$p(x)$$ from our algorithm of all $$x$$ that are true 0's and $$f_1(p)$$ the p.d.f. of the predictions for those that are true 1's. The true positive rate (TPR) and false positive rate (FPR) for a given discrimination threshold $$p^*$$ are the integrals of the tails of these distributions:
 
-$$TPR(p^*) = \int ^{\infty} _{p^*} f_1(p)dp. $$
+$$FPR(p^*) := \int ^{1} _{p^*} f_0 (p)dp $$
+
+$$TPR(p^*) := \int ^{1} _{p^*} f_1(p)dp. $$
 
 The ROC curve is the function $$TPR(FPR)$$ and the AUC is thus:
 
 $$AUC = \int_0^1 TPR(FPR) d(FPR).$$
 
-We now do a change of variables in the above integral and integrate instead over the discrimination threshold $$p^*$$. By the above equation for $$FPR(p^*)$$ and the fundamental theorem of calculus, $$d(FPR) = - f_0(p)dp$$. The limits on the integral are then from $$\infty$$ to $$-\infty$$ in the discrimination threshold, since these make the false positive rate go from 0 to 1.
+We invariably obtain FPR = 0 as the discrimination threshold $$p^* \rightarrow 1$$ (effectively classifying all data points as class 0) and obtain FPR = 1 as the discrimination threshold $$p^* \rightarrow 0$$ (effectively classifying all data points as class 1). Let's instead write the AUC as an integration over the discrimination threshold $$p^*$$.
 
-$$AUC = - \int_{\infty}^{-\infty} TPR(FPR(p^*)) f_0(p^*) dp^*.$$
+By the above equation for $$FPR(p^*)$$ and the fundamental theorem of calculus, $$d(FPR) = - f_0(p^*)dp^*$$. The limits on the integral over the discrimination threshold are then from 1 to 0, since these thresholds tune the false positive rate from 0 to 1. Let's also plug in the formula for $$TPR(p^*)$$.
 
-We can view $$TPR(FPR(p^*))$$ as $$TPR(p^*)$$:
+$$AUC = - \int_{1}^{0} \int_{p^*}^{1} f_1(p)dp f_0(p^*) dp^*.$$
 
-$$AUC = \int_{-\infty}^{\infty} TPR(p) f_0(p) dp.$$
+Or, 
 
-Let's intuit this. The probability that a prediction for a randomly chosen example from class 0 falls in $$(p,p+dp)$$ is $$f_0(p)dp$$, by definition of a probability density. The probability that a randomly chosen 1 yields a prediction $$f_1>p$$ is $$TPR(p)$$ since this integrates the $$f_1(p)$$ p.d.f. to the right of $$p$$. The product $$TPR(p)f_0(p) dp$$ is thus the probably that a randomly chosen point from class 0 yields a prediction $$p$$ and then a randomly chosen 1 point ranks higher than it. Integrating over all possible $$p$$ considers all such possible values $$p$$ that the model prediction of a point from class 0 would yield, which is what the integral above does. Thus, the AUC can be interpreted as the probability that a randomly chosen point from class 0 ranks below a randomly chosen point from class 1. If the classification algorithm is performing well, the AUC will be closer to 1; a randomly guessing algorithm is closer to 1/2. This complements the geometric interpretation above.
+$$AUC = \int_{0}^{1} \int_{0}^{1} I(p > p^*) f_1(p)f_0(p^*) dp dp^*.$$
+
+where $$I(\cdot)$$ is the indicator function. Since $$f_1(p) f_0(p^*)$$ is the probability density of the algorithm scoring a randomly selected class 1 example as $$p$$ and a randomly selected class 0 example as $$p^*$$, we can see from this integral that the AUC is the probability that a randomly chosen point from class 0 ranks below a randomly chosen point from class 1. If the classification algorithm is performing well, the AUC will be closer to 1; a randomly guessing algorithm is closer to 1/2.
