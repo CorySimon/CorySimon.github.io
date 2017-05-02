@@ -104,7 +104,7 @@ function parallel_pi_computation(N::Int; ncores::Int=8)
 
     # compute sum of pi's estimated among all cores in parallel
     sum_of_pis = @parallel (+) for i=1:ncores
-        compute_pi(int(N / ncores))
+        compute_pi(ceil(Int, N / ncores))
     end
 
     return sum_of_pis / ncores  # average value
