@@ -62,10 +62,10 @@ for x in range(N_x):
         expected_voucher_payoffs += prob_k_show_up * voucher_payoffs
     expected_net_revenue[x] = expected_ticket_revenue - expected_voucher_payoffs
 
+# plot expected net revenue as a function of `x`
 fig = plt.figure()
 plt.plot(range(N_x), expected_net_revenue, linewidth=3)
 plt.xlim([0, x])
- # plt.ylim([np.m, np.max(expected_net_revenue)])
 plt.axhline(y=0, linestyle='--', color='k')
 plt.axhline(y=nb_total_seats * revenue_per_ticket, linestyle='--', color='r')
 plt.xlabel('# tickets beyond capacity ($x$)')
