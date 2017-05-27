@@ -69,3 +69,5 @@ This is a first-pass analysis of how airlines choose to overbook flights to max
 This analysis considers only the revenue of the airline. However, there is an externality associated with bumping passengers. Think about how this passenger may lose out on one day of pay, how his or her employer loses out of one day of valuable work, and how the local ice cream shop loses out on one customer that would have otherwise taken his or her family out for ice cream that day.
 
 <sup>1</sup> We can lump all of the following costs of a bumped passenger into one number: airline voucher + hotel room + ticket for next available flight + lost customer loyalty
+
+*UPDATE*: The Python code to generate the expected net revenue plot above is [here](https://github.com/CorySimon/CorySimon.github.io/blob/master/codes/overboarding.py).
