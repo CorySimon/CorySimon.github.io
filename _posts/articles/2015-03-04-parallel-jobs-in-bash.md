@@ -8,7 +8,7 @@ share: true
 tags: [computing]
 ---
 
-Often I have a program that I'd like to run with several different settings. For example, I wrote a program in C, compiled into a binary `simulate`, that computes the amount of gas that a material will adsorb as a function of the pressure of the gas with which the the material is in contact. My goal is to make a plot of how much gas a material adsorbs at different pressures, called an *adsorption isotherm*:
+Often I have a program that I'd like to run with several different settings. For example, I wrote a program in C, compiled into a binary `simulate`, that computes the amount of gas that a material will adsorb as a function of the pressure of the gas with which the material is in contact. My goal is to make a plot of how much gas a material adsorbs at different pressures, called an *adsorption isotherm*:
 
 {:.center}
 <figure>
@@ -88,7 +88,7 @@ Can you see an inefficiency in the above script? While much faster than the seri
 
 The solution is not elegant, and I haven't implemented this yet. [This post](http://prll.sourceforge.net/shell_parallel.html) has a rather complicated Bash code to keep the cores busy by submitting a new job as soon as one of the simulations finish.
 
-**UPDATE** As pointed out in the comments, [GNU Parllel](https://www.gnu.org/software/parallel/) makes running jobs in parallel *much* easier. You can install GNU Parallel in Ubuntu with `sudo apt-get parallel`. Now, running jobs in parallel is as easy as:
+**UPDATE** As pointed out in the comments, [GNU Parallel](https://www.gnu.org/software/parallel/) makes running jobs in parallel *much* easier. You can install GNU Parallel in Ubuntu with `sudo apt-get install parallel`. Now, running jobs in parallel is as easy as:
 
 {% highlight bash %}
 #!/bin/bash
@@ -100,4 +100,4 @@ echo "Number of processors: $nprocs"
 parallel -j$nprocs ./simulate {} ::: 100000 10000 1000 100 10 1
 {% endhighlight %}
 
-As Daniele Ongari elegantly pointed out in the comments, if possible/known *a priori*, order the jobs in decreasing run time. For this example, we expect simulations at higher pressures to take the longest since there are more molecules in the system. We want the jobs with the longest run time to begin running immediately. If you don't clearly see this, consider when we have 10 processors and 19 jobs. Of the 19 jobs, one job takes two hours to run and the remaining jobs each take one hour to run. If we put the two hour job in the beginning, we can keep all processors busy and the entire process will take two hours. On the other hand, if the two hour job is last, the entire process will take three hours as we are waiting for the two hour job to finish, and nine processors would be idle during the last hour.
+As Daniele Ongari elegantly pointed out in the comments, if possible/known *a priori*, order the jobs in decreasing run time. For this example, we expect simulations at higher pressures to take the longest since there are more molecules in the system. We want the jobs with the longest run time to begin running immediately. If you don't clearly see this, consider when we have 10 processors and 19 jobs and, of the 19 jobs, one job takes two hours to run and the remaining jobs each take one hour to run. If we put the two hour job in the beginning, we can keep all processors busy and the entire process will take two hours. On the other hand, if the two hour job is last, the entire process will take three hours; during the last hour, nine of the processors will be idle as we are waiting for the two hour job to finish.
