@@ -88,3 +88,16 @@ Can you see an inefficiency in the above script? While much faster than the seri
 
 The solution is not elegant, and I haven't implemented this yet. [This post](http://prll.sourceforge.net/shell_parallel.html) has a rather complicated Bash code to keep the cores busy by submitting a new job as soon as one of the simulations finish.
 
+**UPDATE** As pointed out in the comments, [GNU Parllel](https://www.gnu.org/software/parallel/) makes running jobs in parallel *much* easier. You can install GNU Parallel in Ubuntu with `sudo apt-get parallel`. Now, running jobs in parallel is as easy as:
+
+{% highlight bash %}
+#!/bin/bash
+
+nprocs=$(cat /proc/cpuinfo | awk '/^processor/{print $3}' | tail -1)
+echo "Number of processors: $nprocs"
+
+# run simulate script with arguments after :::
+parallel -j$nprocs ./simulate {} ::: 100000 10000 1000 100 10 1
+{% endhighlight %}
+
+As Daniele Ongari elegantly pointed out in the comments, if possible/known *a priori*, order the jobs in decreasing run time. For this example, we expect simulations at higher pressures to take the longest since there are more molecules in the system. We want the jobs with the longest run time to begin running immediately. If you don't clearly see this, consider when we have 10 processors and 19 jobs. Of the 19 jobs, one job takes two hours to run and the remaining jobs each take one hour to run. If we put the two hour job in the beginning, we can keep all processors busy and the entire process will take two hours. On the other hand, if the two hour job is last, the entire process will take three hours as we are waiting for the two hour job to finish, and nine processors would be idle during the last hour.
