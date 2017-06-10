@@ -35,3 +35,7 @@ The full article in Cell is [here](http://www.cell.com/cell/fulltext/S0092-8674(
 
 > Their seminal papers were often rejected by leading journals—appearing only after considerable delay and in less prominent venues. These observations may not be a coincidence: the settings may have afforded greater freedom to pursue less trendy topics but less support about how to overcome skepticism by journals and reviewers.
 > Eric S. Lander. "The Heroes of CRISPR." Cell (2016) [DOI](http://dx.doi.org/10.1016/j.cell.2015.12.041)
+
+**UPDATE**
+
+As Michael Eisen pointed out in his [blog post](http://www.michaeleisen.org/blog/?p=1825), "The Heroes of CRISPR" article was written with a conflict of interest and may not be the most impartial story of how CRISPR was discovered. That said, the points I made here still hold!
